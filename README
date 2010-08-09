@@ -1,0 +1,7 @@
+MINIX 3 Playground: Some experimental programs of MINIX 3.
+
+Copyright (c) 2010 oraccha
+
+This directory includes:
+	- libtask: libtask port for MINIX 3.
+
