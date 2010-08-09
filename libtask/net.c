@@ -4,7 +4,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
-#include <sys/poll.h>
+//#include <sys/poll.h>
 
 int
 netannounce(int istcp, char *server, int port)
@@ -165,11 +165,13 @@ netdial(int istcp, char *server, int port)
 	}
 	fdnoblock(fd);
 
+#if !defined(__minix)
 	/* for udp */
 	if(!istcp){
 		n = 1;
 		setsockopt(fd, SOL_SOCKET, SO_BROADCAST, &n, sizeof n);
 	}
+#endif
 	
 	/* start connecting */
 	memset(&sa, 0, sizeof sa);

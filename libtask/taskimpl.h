@@ -33,7 +33,9 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#if !defined(__minix)
 #include <sched.h>
+#endif
 #include <signal.h>
 #if USE_UCONTEXT
 #include <ucontext.h>

@@ -1,5 +1,9 @@
 #include "taskimpl.h"
+#if defined(__minix)
+#include "poll.h"
+#else
 #include <sys/poll.h>
+#endif
 #include <fcntl.h>
 
 enum
